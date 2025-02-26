@@ -22,7 +22,10 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://backendfor-rock-sense.vercel.app/"],  # Vite's default port
+    allow_origins=[
+        "http://localhost:5173",  # Vite's default port
+        "https://backendfor-rock-sense.vercel.app"  # Add your frontend URL here
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
