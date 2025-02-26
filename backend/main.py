@@ -20,16 +20,13 @@ logger = logging.getLogger(__name__)
 app = FastAPI()
 
 # Add CORS middleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",  # Vite's default port
-        "https://backendfor-rock-sense.vercel.app"  # Add your frontend URL here
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+   app.add_middleware(
+       CORSMiddleware,
+       allow_origins=["*"],  # Allow all origins temporarily for testing
+       allow_credentials=True,
+       allow_methods=["*"],
+       allow_headers=["*"],
+   )
 
 class ImageClusterer:
     """A class to perform K-means clustering on images."""
